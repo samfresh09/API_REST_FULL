@@ -5,7 +5,7 @@ const produit = require("./controllers/produitController")
 
 const app = express()
 
-app.use(produit)
+app.use("/api/", produit)
 
 db.query("SELECT 1")
     .then(data => console.log("connection a la base de donne fais avec success"))
