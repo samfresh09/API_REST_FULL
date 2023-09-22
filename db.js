@@ -7,6 +7,5 @@ const mysqlPool = mysql.createPool({
     database: "apirest_nodejs",
 })
 
-mysqlPool.query("SELECT 1")
-    .then(data => console.log("connection a la base de donne fais avec success"))
-    .catch(err => console.log("ERROR DE CONNECTION A LA DB"))
+
+module.exports = mysqlPool
