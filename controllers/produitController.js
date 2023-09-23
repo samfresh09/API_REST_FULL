@@ -10,10 +10,10 @@ router.get("/", (req, res) => {
 })
 
 //recuperation de la liste de toutes les produit de la base de donne
-router.get("/all/product/", (req, res) => {
-    db.query("SELECT * FROM produit")
-        .then(data => res.send(data[0]))
+router.get("/all/product/", async(req, res) => {
+    const [allProduct] = await db.query("SELECT * FROM produit")
         .catch(err => res.console.log('erreur envoie de la liste des produit'))
+    res.send(allProduct)
 })
 
 module.exports = router
